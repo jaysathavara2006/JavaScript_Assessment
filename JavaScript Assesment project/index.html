@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .slider-container {
+            width: 80%;
+            margin: 50px auto;
+            position: relative;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .main-image {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+        .thumbnail {
+            width: 100px;
+            height: 80px;
+            margin: 0 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            object-fit: cover;
+        }
+        .thumbnail.active {
+            border-color: #000;
+        }
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .arrow {
+            pointer-events: all;
+            font-size: 45px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.425);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="arrows">
+            <span class="arrow" id="prev">&lt;</span>
+            <span class="arrow" id="next">&gt;</span>
+        </div>
+        <img id="main-image" class="main-image" src="" alt="Main Image">
+        <div class="thumbnails" id="thumbnails"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
